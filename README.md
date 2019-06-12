@@ -85,6 +85,8 @@ cd ride_safety
 
 ### Step 2: Install dependencies if not yet installed
 
+To open `*.ipynb`, **jupyter notebook** is needed, to simplify the installation, please use **Anaconda** python distribution
+
 the preprocessing library `preprocess_tools.py` is provided in this repo.
 
 make sure that all dependencies have been installed either by using `pip` or `conda`
@@ -136,9 +138,9 @@ Run all the cells **in order**
 
 #### Use multiprocess method
 
-To quicken the preprocessing, it is better to take advantage of **multiprocessing**, please follow below steps to use multiprocessing instead of the preprocessing in the `prediction_template.ipynb`
+To quicken the preprocessing, it is better to take advantage of **multiprocessing**, please follow below steps to use multiprocess
 
-fill in the path to the data in `multiprocess_extraction.py`
+fill in the path to the data in `multiprocess_extraction.py` (it is assumed that the `measurements.csv` and `labels.csv` follow the same format as the one in the training data provided)
 
 ```
 # load data to be predicted
@@ -152,16 +154,13 @@ run the script
 python multiprocess_extraction.py
 ```
 
-run jupyter notebook and open `prediction_template_multi.ipynb`
-
-change the path to the measurements and labels data in this cell
-(it is assumed that the `measurements.csv` and `labels.csv` above follow the same format as the one in the training data provided)
+run jupyter notebook 
 
 ```
-# load data to be predicted
-df_measurement = pd.read_csv('/path/to/measurements.csv')
-df_label = pd.read_csv('/path/to/labels.csv')
+jupyter notebook
 ```
+
+and open `prediction_template_multi.ipynb`
 
 then run all the cells
 
