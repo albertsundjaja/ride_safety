@@ -164,6 +164,21 @@ and open `prediction_template_multi.ipynb`
 
 then run all the cells
 
+## Further Works and Improvements
+
+### Event based classification
+
+Instead of classifying the whole ride as unsafe, we could instead classify a **time window** where the unsafe driving occurred. Also, to improve it further, we could also give labels to these events such as turning right, changing lane or stopping. This would greately increase the model performance as it will have a more clearly defined problem. We could then implement a sliding window technique to scan a ride booking for events that are considered unsafe.
+
+### Collect GPS coordinate and time of day
+
+GPS coordinate will improve classification, as the model will be able to correlate certain areas with certain driving style. For example, driving over 100km/h on a highway can be considered safe, while driving over 100km/h on a curvy hills is not. The downside is, we would need a lot more samples. But, with Grab's number of rides, this is achievable.
+
+Time of day could also be beneficial, the model could identify certain hours of day which is deemed more dangerous, e.g. driving in the rush hours could make certain driving style more dangerous.
+
+
+
+
 ## Training the Model On Your Own
 
 fill out the path to the required data files in `extract_g.py` and `clean_and_orient.py`
